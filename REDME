@@ -1,0 +1,46 @@
+// Iniciar proyecto ionic
+ionic start
+
+// Crear pagina
+ionic g page
+
+// Iniciar app
+ionic serve
+
+// Compilar ionic
+ionic build --prod 
+
+// Generar archivos android
+npx cap add android
+
+// Instalo electron
+npm i ngx-electron electron
+
+// Instalo electron-packager
+npm i electron-packager --save-dev
+(lo tuve que instalar globalmente por que no me reconocia el comando
+npm install electron-packager -g)
+
+// add electron
+npx cap add electron
+
+// compilo
+ionic build --prod
+
+// copio capacitor
+npx cap copy
+
+// abro
+npx cap open electron
+
+// se crea script en package.json
+"packager": "electron-packager electron --all --out ./outApp --app-version 1.0.0 --overwrite --icon=/src/assets/icon/icon.ico"
+
+// se ejecuta con 
+npm run-script packager
+
+// compilo .exe
+electron-packager 'electron' 'ionic-angular-rick-and-morty' 
+
+// optional
+electron-packager 'electron' 'ionic-angular-rick-and-morty' --platform=win32 --arch=x64
